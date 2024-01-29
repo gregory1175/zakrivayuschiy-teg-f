@@ -1,1 +1,42 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font-family: "Inter", sans-serif;
+    --more-font-family: "Press Start 2P", fantasy;
+    --fill-color: rgba(255 0 0 / 1);
+  }
+  
+@media (prefers-color-scheme: light) {
+    :root {
+        --main-background-color: rgba(255 255 255 / 1);
+        --background-color: var(--main-background-color) ;
+        --main-text-color: rgba(0 0 0 /1);
+        --text-color: var(--main-text-color);
+        --title-font-weight: 700;
+        --text-font-weight: 400;
+        --background-color: var(--main-background-color);
+        --Liner-color: rgba(231 231 231 / 1);
+        --Liner-color-more: rgba(26 26 26 / 1);
+        --background-color-start: var(--Liner-color);
+        --background-color-end: var(--Liner-color-more);
+        --border-color: var(--main-text-color);
+        --animation-color: var(--main-background-color);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-background-color: rgba(0 0 0 / 1);
+        --background-color: var(--main-background-color) ;
+        --main-text-color: rgba(0 209 20 / 1);
+        --text-color: var(--main-text-color);
+        --title-font-weight: 785;
+        --text-font-weight: 465;
+        --background-color: var(--main-background-color);
+        --Liner-color: rgba(0 127 12 / 1);
+        --Liner-color-more: rgba(0 67 6 / 1);
+        --background-color-start: var(--Liner-color);
+        --background-color-end: var(--Liner-color-more);
+        --border-color: var(--main-text-color);
+        --animation-color: var(--main-text-color);
+    }
+}
+

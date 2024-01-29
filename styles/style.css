@@ -1,20 +1,306 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-
-*/
-
 .page {
-  min-inline-size: 320px;
+  font-variation-settings: var(--text-font-weight);
   min-block-size: 100dvb;
+  background:
+  repeating-linear-gradient(
+    90deg,
+    var(--background-color),
+    var(--background-color) 2px,
+    transparent 2px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    180deg,
+    var(--background-color-start),
+    var(--background-color-end) 2px,
+    transparent 2px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    180deg,
+    var(--background-color-start) 0.01%,
+    var(--background-color-end)
+  );
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Photo filters */
+.grayscale {
+  filter: grayscale(50%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.saturate {
+  filter: saturate(360%);
+}
+
+.invert {
+  filter: invert(80%);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.blur {
+  filter: blur(20px);
+}
+
+.multi-filter {
+  filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
+}
+
+/* header */
+header {
+  font-family: var(--more-font-family);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 100px 0px;
+  padding: 136px 0 20px;
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (width <= 376px) {
+  header {
+    padding: 120px 0 25px;
+  }
+}
+
+.header__link {
+  color: var(--text-color);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
+}
+
+.header__title {
+  color: var(--text-color);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin: 20px 0 25px;
+}
+
+.header__theme-menu {
+  position: relative;
+}
+
+.theme-menu__list {
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: start;
+  margin: 0px -15px 0px 0px;
+}
+
+@media (width <= 376px  ) {
+  .theme-menu__list {
+    margin: 0px -20px 0px 0px;
+  }
+}
+
+.theme-menu__button {
+  color: var(--text-color);
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  overflow: hidden;
+  padding: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -15px;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  opacity: 0.6;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: translateX(0);
+}
+
+/*main*/
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  color: var(--text-color);
+  font-family: var(--main-font-family);
+  margin-bottom: 50px;
+}
+
+.card__title {
+  font-size: 18px;
+  padding: 3px 24px 5px 10px;
+}
+
+.card__section {
+  border: 2px solid var(--border-color);
+  background: var(--background-color);
+}
+
+.card__image-container {
+  position: relative;
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.card__image-label {
+  font-family: var(--more-font-family);
+  font-size: 14px;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  right: 25px;
+  top: 27px;
+}
+
+.card__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 25px;
+  font-size: 18px;
+}
+
+.card__like-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 6px; 
+  padding: 0px 25px 25px 0px;
+}
+
+.card__icon-button {
+  padding: 0;
+  width: 39px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card__like-button {
+  width: 130px;
+  padding: 10px 0;
+}
+
+.floppy__image {
+  width: 21px;
+  height: 21px;
+  mix-blend-mode: difference;
+}
+/* footer*/
+.footer {
+  margin-bottom: 105px;
+  padding-top: 0px;
+}
+
+/* Dialog */
+.dialog {
+  font-family: var(--more-font-family);
+  font-size: 14px;
+  padding: 30px 26px;
+  color: var(--text-color);
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog:not([open]) {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+@media (width <= 375px) {
+  .dialog__container {
+    gap: 28px;
+  }
+}
+
+.dialog__main-container{
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.dialog__text {
+  text-transform: uppercase;
+  line-height: 1.5;
+  max-width: 234px;
+  width: 100%;
+}
+
+@media (width <= 375px) {
+  .dialog__text {
+    width: 80%;
+  }
+}
+
+.dialog .floppy__image {
+  width: 39px;
+  height: 39px;
+  mix-blend-mode: normal;
+}
+
+@media (width <= 375px) {
+  .dialog {
+    padding: 32px 38px;
+  }
 }

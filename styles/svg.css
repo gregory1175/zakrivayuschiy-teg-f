@@ -1,0 +1,72 @@
+.floppy__image {
+    width: 21px;
+    height: 21px;
+    mix-blend-mode: difference;
+  }
+  
+  @media (width <= 375px) {
+    .floppy__image {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  
+  .like-icon {
+    width: inherit;
+    height: inherit;
+    fill: var(--text-color);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .like-icon .heart {
+    transition: fill 0.1s;
+    transform-origin: center center;
+  }
+  
+  .like-icon .contour {
+    fill: var(--text-color);
+  }
+  
+  .like-icon .main-body {
+    fill: var(--background-color);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon .core {
+    fill: var(--background-color);
+    transition: fill 0.3s 0.05s;
+  }
+  
+  .like-icon .sparks {
+    opacity: 0;
+    fill: var(--fill-color);
+  }
+  
+  .like-icon:hover .main-body {
+    fill: var(--text-color);
+  }
+  
+  .like-icon:hover .core {
+    fill: var(--text-color);
+  }
+  
+  .like-icon:active .main-body {
+    fill: var(--fill-color);
+  }
+  
+  .like-icon:active .core {
+    fill: var(--fill-color);
+  }
+  
+  .like-icon.is-liked .contour {
+    fill: var(--fill-color);
+  }
+  
+  .like-icon.is-liked .main-body {
+    fill: var(--fill-color);
+  }
+  
+  .like-icon.is-liked .core {
+    fill: var(--fill-color);
+  }
