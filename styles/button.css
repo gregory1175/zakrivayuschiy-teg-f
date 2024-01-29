@@ -50,9 +50,10 @@
     background: var(--background-color);
 }
   
-@media (width <= 375px) {
+@media (width < 376px) {
     .save__button {
       flex-direction: column;
+      padding: 20px 20px;
     }
 }
   

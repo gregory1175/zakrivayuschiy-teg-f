@@ -5,12 +5,11 @@
 }
 
 body 
-  {
+    {
   font-family: var(--main-font-family), sans-serif;
   max-inline-size: 696px;
   margin: 0 auto;
-}
-  
+} 
 
 h1,
 h2,
