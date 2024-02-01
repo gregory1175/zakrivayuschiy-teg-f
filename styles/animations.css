@@ -1,39 +1,106 @@
-.theme-menu__button:disabled::before {
-    animation: arrow-animation 0.5s ease-in-out infinite alternate;
-  }
+/*Base like*/
+.like-icon {
+  width: inherit;
+  height: inherit;
+  fill: var(--text-color);
+  position: relative;
+  z-index: 1;
+}
+
+/*До анимации*/
+.like-icon .heart {
+  transition: fill 0.1s;
+  transform-origin: center center;
+}
   
-  .like-icon.is-liked .heart {
-    animation: scale-animation 0.3s ease-in 0.1s 1 alternate;
-  }
+.like-icon .contour {
+  fill: var(--text-color);
+  transition: fill 0.1s linear;
+}
   
-  .like-icon.is-liked .sparks {
-    animation: sparks-animation 0.3s ease-in 0.3s 1 alternate;
-  }
+.like-icon .main-body {
+  fill: var(--background-color);
+  transition: fill 0.3s linear;
+}
   
-  @keyframes arrow-animation {
-    from {
-      left: -20px;
-    }
-    to {
-      left: -16px;
-    }
-  }
+.like-icon .core {
+  fill: var(--background-color);
+  transition: fill 0.3s linear 0.03s;
+}
   
-  @keyframes scale-animation {
-    from {
-      scale: 1;
-    }
-    to {
-      scale: 1.5;
-    }
-  }
+.like-icon .sparks {
+  opacity: 0;
+  fill: var(--fill-color);
+}
+
+/*При наведении*/
+.like-icon:hover .main-body {
+  fill: var(--text-color);
+  transition: fill 0.3s linear 0.05s;
+}
   
-  @keyframes sparks-animation {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+.like-icon:hover .core {
+  fill: var(--text-color);
+  transition: fill 0.3s linear;
+}
+
+/*Активна*/
+.like-icon:active .main-body {
+  fill: var(--fill-color);
+}
   
+.like-icon:active .core {
+  fill: var(--fill-color);
+}
+
+/*После клика*/
+.like-icon.is-liked .contour {
+  fill: var(--fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+  
+.like-icon.is-liked .main-body {
+  fill: var(--fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+  
+.like-icon.is-liked .core {
+  fill: var(--fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale-animation 0.3s ease-in 0.1s 1 alternate;
+}
+  
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s ease-in 0.3s 1 alternate;
+}
+  
+@keyframes scale-animation {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.5;
+  }
+}
+  
+@keyframes sparks-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Директива для кнопки theme-menu__button*/
+@keyframes arrow-animation {
+  from {
+    left: -20px;
+  }
+  to {
+    left: -16px;
+  }
+}

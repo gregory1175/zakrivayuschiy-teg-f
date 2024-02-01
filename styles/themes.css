@@ -3,8 +3,6 @@
     --background-color: var(--main-background-color) ;
     --main-text-color: rgba(0 0 0 /1);
     --text-color: var(--main-text-color);
-    --title-font-weight: 700;
-    --text-font-weight: 400;
     --background-color: var(--main-background-color);
     --Liner-color: rgba(231 231 231 / 1);
     --Liner-color-more: rgba(26 26 26 / 1);
@@ -12,6 +10,8 @@
     --background-color-end: var(--Liner-color-more);
     --border-color: var(--main-text-color);
     --animation-color: var(--main-background-color);
+    --title-font-weight: "wght" 700;
+    --text-font-weight: "wght" 400;
 }
 
 :root.theme-dark {
@@ -19,8 +19,6 @@
     --background-color: var(--main-background-color) ;
     --main-text-color: rgba(0 209 20 / 1);
     --text-color: var(--main-text-color);
-    --title-font-weight: 785;
-    --text-font-weight: 465;
     --background-color: var(--main-background-color);
     --Liner-color: rgba(0 127 12 / 1);
     --Liner-color-more: rgba(0 67 6 / 1);
@@ -28,5 +26,7 @@
     --background-color-end: var(--Liner-color-more);
     --border-color: var(--main-text-color);
     --animation-color: var(--main-text-color);
+    --title-font-weight: "wght" 785;
+    --text-font-weight: "wght" 465;
 }
 
