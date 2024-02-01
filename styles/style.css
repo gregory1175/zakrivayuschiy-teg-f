@@ -50,11 +50,11 @@
 }
 
 .blur {
-  filter: blur(20px);
+  filter: blur(10px);
 }
 
 .multi-filter {
-  filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
+  filter: saturate(350%) hue-rotate(90deg) grayscale(10%) invert(6%) blur(3px);
 }
 
 /* header */
