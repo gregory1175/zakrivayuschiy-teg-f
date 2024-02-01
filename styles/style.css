@@ -146,7 +146,7 @@
 }
 
 @media (width <= 376px) {
-  .theme-menu__button::after{
+  .theme-menu__button::after {
     height: 1px;
   }
 }
@@ -212,9 +212,9 @@ main {
   top: 27px;
   text-shadow:
   -1px 0 var(--background-color), 
-   0 1px var(--background-color), 
-   1px 0 var(--background-color), 
-   0 -1px var(--background-color);
+  0 1px var(--background-color), 
+  1px 0 var(--background-color), 
+  0 -1px var(--background-color);
 }
 
 @supports((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
@@ -226,7 +226,7 @@ main {
 }
 
 @media (width <= 376px) {
-  .card__image-label  {
+  .card__image-label {
     right: 11px;
     top: 22px;
   }
@@ -270,7 +270,6 @@ main {
   width: 130px;
   padding: 10px 0;
 }
-
 
 .floppy__image {
   width: 21px;
