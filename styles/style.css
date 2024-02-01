@@ -249,12 +249,12 @@ main {
   font-variation-settings: var(--text-font-weight);
 }
 
-.card__like-button-container {
+.card__like-button-container  {
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 0px 25px 25px 0px;
-  gap: 6px; 
+  gap: 6px;
 }
 
 .card__icon-button {
@@ -277,7 +277,7 @@ main {
   mix-blend-mode: difference;
 }
 
-@media (width <= 375px) {
+@media (width < 376px) {
 .floppy__image {
   width: 28px;
   height: 28px;
