@@ -29,11 +29,12 @@
 }
   
 .button:focus {
-    outline: none;
+    transition: transform 0.3s ease;
 }
   
 .button:focus-visible {
     box-shadow: 2px 2px 0px 0px var(--text-color);
+    outline: none;
 }
   
 .button__text {

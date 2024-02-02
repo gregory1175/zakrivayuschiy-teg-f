@@ -1,7 +1,7 @@
 /*Base like*/
 .like-icon {
-  width: inherit;
-  height: inherit;
+  inline-size: 39px;
+  block-size: 36px;
   fill: var(--text-color);
   position: relative;
   z-index: 1;
@@ -47,10 +47,12 @@
 /*Активна*/
 .like-icon:active .main-body {
   fill: var(--fill-color);
+  transition: fill 0.3s linear 0.05s;
 }
   
 .like-icon:active .core {
   fill: var(--fill-color);
+  transition: fill 0.3s linear;
 }
 
 /*После клика*/

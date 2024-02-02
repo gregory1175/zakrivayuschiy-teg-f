@@ -4,23 +4,23 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-color: var(--background-color);
-  background:
+  background:    
   repeating-linear-gradient(
-    90deg,
+    to left,
     var(--background-color),
-    var(--background-color) 2px,
-    transparent 2px,
+    var(--background-color) 0 2px, 
+    transparent  2px,
     transparent 4px
   ),
   repeating-linear-gradient(
-    180deg,
+    to bottom,
     var(--background-color-start),
-    var(--background-color-end) 2px,
+    var(--background-color) 0 2px,
     transparent 2px,
     transparent 4px
   ),
-  repeating-linear-gradient(
-    180deg,
+  linear-gradient(
+    to bottom,
     var(--background-color-start) 0.01%,
     var(--background-color-end)
   );
@@ -113,16 +113,44 @@
   color: var(--text-color);
   position: relative;
   text-transform: uppercase;
-  background: none;
   border: none;
-  padding: 0;
-  opacity: 1;
+  background: none;
+  font-size: 14px;
   transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
+/*Анимация кнопок в шапке*/
+.theme-menu__button:not(:disabled)::after {
+  content: "";
+  display: block;
+  background: currentColor;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+  block-size: 2px;
+}
+
+/*При наведении*/
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+/*tab*/
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/*Недоступные кнопки*/
 .theme-menu__button:disabled {
   opacity: 0.6;
+  cursor: default;
   pointer-events: none;
 }
 
@@ -133,40 +161,6 @@
   top: 0px;
   animation: arrow-animation 0.5s ease-in-out infinite alternate;
 } 
-
-.theme-menu__button::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: var(--text-color);
-  opacity: 0.6;
-  transition: transform 0.3s ease;
-  transform: scaleX(0);
-}
-
-@media (width <= 376px) {
-  .theme-menu__button::after {
-    height: 1px;
-  }
-}
-
-.theme-menu__button:hover {
-  opacity: 0.6;
-}
-
-.theme-menu__button:focus {
-  outline: none;
-  opacity: 0.6;
-}
-
-.theme-menu__button:focus-visible {
-  opacity: 0.6;
-}
-
-.theme-menu__button:focus-visible::after {
-  transform: translateX(0);
-}
 
 /*main*/
 main {
@@ -258,12 +252,20 @@ main {
 }
 
 .card__icon-button {
+  display: flex;
   padding: 0;
-  width: 39px;
-  height: 36px;
   background: transparent;
-  border: none;
   cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/*tab для сердца*/
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color);
 }
 
 .card__like-button {
